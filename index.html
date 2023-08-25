@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
         /* Apply the custom font */
-        body, h1, h2, p {
+        body, h1, h2, p, label, input, button {
             font-family: 'Great Vibes', cursive;
         }
 
@@ -57,6 +57,19 @@
             cursor: pointer;
         }
 
+        /* Add styles for the form */
+        .reservation-form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .reservation-form label,
+        .reservation-form input {
+            margin-bottom: 10px;
+        }
+
         /* Add styles for the footer */
         footer {
             text-align: center;
@@ -97,21 +110,25 @@
     <section class="rsvp section">
         <h2>RSVP</h2>
         <p>Will you be joining us to celebrate our special day?</p>
-        <button id="rsvpButton">RSVP Now</button>
-        <p id="responseMessage"></p>
+        <form class="reservation-form" action="mailto:bouchrouchserge@gmail.com" method="post" enctype="text/plain">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile" required>
+
+            <label for="rsvp">RSVP:</label>
+            <select id="rsvp" name="rsvp">
+                <option value="yes">Yes, I will attend</option>
+                <option value="no">No, I cannot attend</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
     </section>
 
     <footer>
         <p>&copy; 20XX Leda & Abdo</p>
     </footer>
-
-    <script>
-        const rsvpButton = document.getElementById("rsvpButton");
-        const responseMessage = document.getElementById("responseMessage");
-
-        rsvpButton.addEventListener("click", function () {
-            responseMessage.textContent = "Thank you for RSVPing! We look forward to celebrating with you.";
-        });
-    </script>
 </body>
 </html>
