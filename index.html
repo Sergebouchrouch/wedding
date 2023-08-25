@@ -4,7 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leda & Abdo's Wedding</title>
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        /* Apply the custom font */
+        body, h1, h2, p {
+            font-family: 'Great Vibes', cursive;
+        }
+
+        /* Other styles here */
+        body {
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Add more styles for different sections, headers, etc. */
+        header {
+            background-color: #ffd700;
+            text-align: center;
+            padding: 40px;
+            color: #333;
+        }
+
+        /* Add styles for other sections */
+        .section {
+            background-color: #fff;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Add styles for images */
+        .image {
+            width: 100%;
+            text-align: center;
+        }
+
+        .image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        /* Add styles for the RSVP section */
+        .rsvp button {
+            background-color: #ffd700;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Add styles for the footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -12,31 +72,46 @@
         <p>Join us as we celebrate our love and union</p>
     </header>
     
-    <section class="details">
+    <section class="details section">
         <h2>Wedding Details</h2>
         <p>Date: October 15, 20XX</p>
         <p>Time: 4:00 PM</p>
         <p>Location: Beautiful Venue, City</p>
     </section>
 
-    <section class="story">
+    <section class="story section">
         <h2>Our Love Story</h2>
         <p>We met in the most unexpected way and fell in love instantly...</p>
     </section>
 
-    <section class="gallery">
+    <section class="gallery section">
         <h2>Photo Gallery</h2>
         <div class="image">
-            <img src="image1.jpg" alt="Wedding Photo 1">
+            <img src="https://via.placeholder.com/400" alt="Wedding Photo 1">
         </div>
         <div class="image">
-            <img src="image2.jpg" alt="Wedding Photo 2">
+            <img src="https://via.placeholder.com/400" alt="Wedding Photo 2">
         </div>
-        <!-- Add more images here -->
+    </section>
+
+    <section class="rsvp section">
+        <h2>RSVP</h2>
+        <p>Will you be joining us to celebrate our special day?</p>
+        <button id="rsvpButton">RSVP Now</button>
+        <p id="responseMessage"></p>
     </section>
 
     <footer>
         <p>&copy; 20XX Leda & Abdo</p>
     </footer>
+
+    <script>
+        const rsvpButton = document.getElementById("rsvpButton");
+        const responseMessage = document.getElementById("responseMessage");
+
+        rsvpButton.addEventListener("click", function () {
+            responseMessage.textContent = "Thank you for RSVPing! We look forward to celebrating with you.";
+        });
+    </script>
 </body>
 </html>
