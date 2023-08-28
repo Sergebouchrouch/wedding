@@ -190,7 +190,7 @@ body {
   z-index: 1;
   overflow-y: scroll; /* Add this property to enable scrolling */
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  
   padding: 20px; /* Add padding as needed */
    
 }

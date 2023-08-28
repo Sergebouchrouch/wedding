@@ -99,7 +99,24 @@
   text-align: center;
 }
 
+.hidden {
+    display: none;
+}
 
+.btn-circle {
+width: 150px; /* Adjust the width to your desired size */
+    height: 150px; /* Same as the width to create a perfect circle */
+    border-radius: 50%; /* Makes the element circular */
+    padding: 0; /* Removes any extra padding that may affect the shape */
+    font-size: 20px; /* Adjust the font size of the button text */   
+    justify-content: center;
+    align-items: center;
+    border: 2px solid ; 
+}
+
+.circular-btn:hover {
+    border-color: #007bff; /* Color the border on hover */
+}
 	  
     </style>
 
@@ -108,16 +125,16 @@
     <link href="style.css" rel="stylesheet">
   </head>
   <body class="d-flex h-100 text-center text-bg-dark">
-  <audio autoplay loop>
-        <source src="the_moment_wedding_instrumental_no_copyright_music_mp3_63096.mp3" type="audio/mpeg">
-    </audio> 
-  <div class="page">
   
-
+  <div class="page" style=" background-color: rgba(0, 0, 0, 0.5); ">
+  
+<audio id="bgmusic" autoplay loop>
+    <source src="the_moment_wedding_instrumental_no_copyright_music_mp3_63096.mp3" type="audio/mpeg">
+</audio>
    
     
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-<div class="slideshow">
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column" style="min-width: 100vw; bak ">
+<div class="slideshow ">
     <div class="slide"></div>
     <div class="slide"></div>
     <div class="slide"></div>
@@ -134,7 +151,13 @@
     
       
   </header>
+  <h1 id="HideTitle" style="font-family: 'TanBold'; font-size:75px; font-weight: bold;"><br/>Abdo <br/>& <br/> Leda</h1>
+  <button id="showContentButton" class="btn btn-outline-white circular-btn btn-circle " style="font-family: 'Arial';">Start<br/> &nbsp<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+  <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+</svg></button>
 
+
+ <div class="content-container hidden">
   <main class="px-3">
   <br/><br/>
     <h1 style="font-family: 'TanBold'; font-size:75px; font-weight: bold;">Abdo <br/>& <br/> Leda</h1>
@@ -224,7 +247,7 @@ Confirm</button>
 						</a>
                     </div>   
 
-</div></div></div>
+</div></div></div></div>
 <script>
 
 function disableButton() {
@@ -345,7 +368,32 @@ updateCountdown();
     }
 </script>
  
- 
+ <script>
+    document.getElementById('showContentButton').addEventListener('click', function() {
+        var contentContainer = document.querySelector('.content-container');
+        var button = document.getElementById('showContentButton');
+		var HideH1 = document.getElementById('HideTitle');
+        contentContainer.classList.remove('hidden');
+        button.style.display = 'none';
+		HideH1.style.display = 'none';
+    });
+</script>
+
+<script>
+    const playButton = document.getElementById('showContentButton');
+    const bgmusic = document.getElementById('bgmusic');
+
+    playButton.addEventListener('click', function() {
+        if (bgmusic.paused) {
+            bgmusic.play();
+            playButton.textContent = 'Pause Music';
+        } else {
+            bgmusic.pause();
+            playButton.textContent = 'Play Music';
+        }
+    });
+</script>
+
  
     </body>
 </html>
