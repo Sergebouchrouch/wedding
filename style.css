@@ -1,0 +1,291 @@
+/*
+ * Globals
+ */
+
+
+/* Custom default button */
+.btn-light,
+.btn-light:hover,
+.btn-light:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+}
+
+
+/*
+ * Base structure
+ */
+.page {
+    overflow: hidden; /* Hide scroll bars on the entire page */
+    position: relative; /* Establish a new containing block for absolute positioning */
+}
+
+body {
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+ 
+  background:  url(img/bg.jpg);
+  
+  background-position: center;
+  overflow: hidden;
+}
+
+.cover-container {
+ width: 100%; /* Set the width as needed */
+  max-width: 800px; /* Set a maximum width if desired */
+  margin: 0 auto; /* Center the container horizontally */
+  
+  border: 1px solid #ccc;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  
+
+  background-size: cover;
+  background-position: center;
+ 
+  position: relative;
+    
+  
+}
+
+
+/*
+ * Header
+ */
+
+.nav-masthead .nav-link {
+  color: rgba(255, 255, 255, .5);
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, .25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+
+
+/* Media query for smaller screens (phones) */
+@media (max-width: 768px) {
+  .cover-container {
+    width: 100%; /* Expand to full width of the viewport */
+    border: none; /* Remove the border for mobile view */
+    box-shadow: none; /* Remove the box shadow for mobile view */
+  }
+}
+
+
+
+/* Container IMAGES */
+
+/* Style for the slideshow container */
+
+
+.slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  animation: slideshow 27s infinite;
+  opacity: 0;
+  transform: scale(1);
+}
+
+/* Keyframes for the slideshow animation */
+@keyframes slideshow {
+  0%, 14.28% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  16%, 28.28% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  85.72%, 100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+.slide:nth-child(1) {
+  background-image: url('img/container-img/Serge-Bouchrouch-1.jpg');
+  animation-delay: 0s;
+}
+
+.slide:nth-child(2) {
+  background-image: url('img/container-img/Serge-Bouchrouch-2.jpg');
+  animation-delay: 3s; /* 3s delay for the second image (total 3s + 3s) */
+}
+
+.slide:nth-child(3) {
+  background-image: url('img/container-img/Serge-Bouchrouch-3.jpg');
+  animation-delay: 6s; /* 6s delay for the third image (total 3s + 6s) */
+}
+
+.slide:nth-child(4) {
+  background-image: url('img/container-img/Serge-Bouchrouch-4.jpg');
+  animation-delay: 9s; /* 9s delay for the fourth image (total 3s + 9s) */
+}
+/* Add more slides with appropriate animation delays if needed */
+
+.slide:nth-child(5) {
+  background-image: url('img/container-img/Serge-Bouchrouch-5.jpg');
+  animation-delay: 12s; /* 9s delay for the fourth image (total 3s + 9s) */
+}
+/* Add more slides with appropriate animation delays if needed */
+
+
+.slide:nth-child(6) {
+  background-image: url('img/container-img/Serge-Bouchrouch-6.jpg');
+  animation-delay: 15s; /* 9s delay for the fourth image (total 3s + 9s) */
+}
+/* Add more slides with appropriate animation delays if needed */
+
+.slide:nth-child(7) {
+  background-image: url('img/container-img/Serge-Bouchrouch-7.jpg');
+  animation-delay: 18s; /* 9s delay for the fourth image (total 3s + 9s) */
+}
+/* Add more slides with appropriate animation delays if needed */
+.slide:nth-child(8) {
+  background-image: url('img/container-img/Serge-Bouchrouch-8.jpg');
+  animation-delay: 21s; /* 9s delay for the fourth image (total 3s + 9s) */
+}
+/* Add more slides with appropriate animation delays if needed */
+
+
+.slide:nth-child(9) {
+  background-image: url('img/container-img/Serge-Bouchrouch-9.jpg');
+  animation-delay: 24s; /* 9s delay for the fourth image (total 3s + 9s) */
+}
+/* Add more slides with appropriate animation delays if needed */
+
+.slide:nth-child(10) {
+  background-image: url('img/container-img/Serge-Bouchrouch-10.jpg');
+  animation-delay: 27s; /* 9s delay for the fourth image (total 3s + 9s) */
+}
+/* Add more slides with appropriate animation delays if needed */
+
+
+
+
+.text-overlay {
+ 
+  z-index: 1;
+  overflow-y: scroll; /* Add this property to enable scrolling */
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px; /* Add padding as needed */
+   
+}
+
+.bi {
+  font-family: 'Bootstrap Icons' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+}
+
+
+
+form .form-field label{
+	display:block;
+}
+
+form .form-field #full_name, 
+form .form-field select#guests, 
+form .form-field #message,
+form .form-field #npersons 
+{
+	width: 90%;
+	margin: 0 auto;
+	height: 60px;
+	border: 2px solid #fff;
+	/*background: rgba(255,255,255,0.1);*/
+	background: rgba(72, 72, 72, 0.4);
+	border-radius: 5px;
+	color: #fff;
+	font-size: 18px;
+	padding: 0 15px;
+}
+
+
+
+
+form .form-field select#guests option{ color:#000;}
+form .form-field label {
+	display: block;
+	margin-bottom: 7px;
+	font-size: 22px;
+}
+form .form-field.fld-name{
+	margin-bottom:42px;
+	
+}
+form .form-field.fld-npersons {
+	margin-top: 42px;
+}
+form button#submit_rsvp {
+	width: 90%;
+	border: none;
+	border-radius: 5px;
+	height: 60px;
+	margin-top: 42px;
+	background: #000;
+	color: #fff;
+	font-size: 22px;
+	box-shadow: 0px 0px 8px 0px #f3f3f3;
+	cursor:pointer;
+	position:relative;
+}
+
+.form-intro-wrapper {
+	font-size: 18px;
+	padding: 3px 10px;
+	margin-bottom: 8%;
+}
+.form-intro-wrapper dd.npersons_cont {
+	font-size: 14px;
+	text-align: center;
+	display: block;
+	margin: 0;
+	padding-top: 7px;
+	font-style: oblique;
+}
+
+form .form-field{
+	position:relative;
+	
+}
+form .form-field .fld_error {
+	color: #d70926;
+	font-size: 12px;
+	position: absolute;
+	width: 100%;
+	bottom: -17px;
+	font-family: arial;
+}
+
+form .form-field input#full_name.error_input,
+form .form-field select#guests.error_input,
+form .form-field input#npersons.error_input{
+	border-color:#d70926;	
+}
